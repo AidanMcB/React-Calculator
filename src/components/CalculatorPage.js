@@ -13,21 +13,23 @@ export default class CalculatorPage extends React.Component {
 
     //decides what function to execute based on the button pressed
     handleClick = (button) => {
-        switch (button) {
-            case "enter":
-                this.calculate()
-                break;
-            case "clear":
-                this.clear()
-                break;
-            case "back-space":
-                this.backSpace()
-                break;
-            default:
-                this.setState({
-                    display: this.state.display + button
-                })
-        }
+        
+            switch (button) {
+                case "enter":
+                    this.calculate()
+                    break;
+                case "clear":
+                    this.clear()
+                    break;
+                case "back-space":
+                    this.backSpace()
+                    break;
+                default:
+                    this.setState({
+                        display: this.state.display + button
+                    })
+            }
+        
 
     }
 
@@ -51,27 +53,27 @@ export default class CalculatorPage extends React.Component {
                 const answer = ((eval(this.state.display) || "") + "").length
                 this.setState({
                     display: answer.toExponential()
-            })
-        }else {
+                })
+            } else {
+                this.setState({
+                    display: (eval(this.state.display) || "") + ""
+                })
+            }
+        }
+        catch (e) {
             this.setState({
-                display: (eval(this.state.display) || "") + ""
+                display: "ERROR"
             })
+            setTimeout(() => this.clear(), 1000);
         }
     }
-    catch(e) {
-        this.setState({
-            display: "ERROR"
-        })
-        setTimeout(() => this.clear(), 1000);
-    }
-}
 
-render() {
-    return (
-        <div>
-            Calculator
-            <Calculator handleClick={this.handleClick} display={this.state.display} />
-        </div>
-    )
-}
+    render() {
+        return (
+            <div>
+                Calculator
+                <Calculator handleClick={this.handleClick} display={this.state.display} />
+            </div>
+        )
+    }
 }
