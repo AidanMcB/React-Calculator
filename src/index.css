@@ -11,6 +11,7 @@ code {
     monospace;
 }
 @media all and (max-width: 500px){
+  /* Display */
   .display-container{
     display: flex;
     justify-content: center;
@@ -24,6 +25,14 @@ code {
     height: 1.25em;
     width: 40%;
   }
+  /* Calculator */
+  .btn-grid{
+    margin: auto;
+    display: grid;
+    width: 50%;
+ 
+  }
+  
 
 
 }
