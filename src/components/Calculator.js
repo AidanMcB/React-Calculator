@@ -17,7 +17,7 @@ export default class Calculator extends React.Component {
                         <button onClick={(e) => this.props.handleClick(e.target.name) } name=")">)</button>
                         <button onClick={(e) => this.props.handleClick(e.target.name) } name="*">*</button>
                         <button onClick={(e) => this.props.handleClick(e.target.name) } name="/">/</button>
-                        <button onClick={(e) => this.props.handleClick(e.target.name) } name="^">^</button>
+                        {/* <button onClick={(e) => this.props.handleClick(e.target.name) } name="^">^</button> */}
                         <button onClick={(e) => this.props.handleClick(e.target.name) } name="clear">Clear</button>
                     </div>
                     <br />

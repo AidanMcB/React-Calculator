@@ -2,9 +2,9 @@ import React from 'react';
 // Components
 import Calculator from './Calculator'
 
-export default class CalculatorPage extends React.Component{
+export default class CalculatorPage extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             display: ""
@@ -13,7 +13,7 @@ export default class CalculatorPage extends React.Component{
 
     //decides what function to execute based on the button pressed
     handleClick = (button) => {
-        switch (button){
+        switch (button) {
             case "enter":
                 this.calculate()
                 break;
@@ -23,10 +23,12 @@ export default class CalculatorPage extends React.Component{
             case "back-space":
                 this.backSpace()
                 break;
-            default: this.setState({
-                display: this.state.display + button
-            })
+            default:
+                this.setState({
+                    display: this.state.display + button
+                })
         }
+
     }
 
     //clears the display 
@@ -38,30 +40,38 @@ export default class CalculatorPage extends React.Component{
     //removes the last entered number/symbol
     backSpace = () => {
         this.setState({
-            display: this.state.display.slice(0,-1)
+            display: this.state.display.slice(0, -1)
         })
     }
     //calculate based on the operand 
-    calculate = (button) => {
-        try{
-            this.setState({
-                display: (eval(this.state.display) || "" ) + ""
+    calculate = () => {
+        try {
+            if (((eval(this.state.display) || "") + "").length > 16) {
+                console.log("ok")
+                const answer = ((eval(this.state.display) || "") + "").length
+                this.setState({
+                    display: answer.toExponential()
             })
-        } 
-        catch(e){
+        }else {
             this.setState({
-                display: "ERROR"
+                display: (eval(this.state.display) || "") + ""
             })
-            setTimeout(() => this.clear(), 1000);
         }
     }
-
-    render(){
-        return(
-            <div>
-                Calculator
-                <Calculator handleClick={this.handleClick} display={this.state.display}/>
-            </div>
-        )
+    catch(e) {
+        this.setState({
+            display: "ERROR"
+        })
+        setTimeout(() => this.clear(), 1000);
     }
+}
+
+render() {
+    return (
+        <div>
+            Calculator
+            <Calculator handleClick={this.handleClick} display={this.state.display} />
+        </div>
+    )
+}
 }
