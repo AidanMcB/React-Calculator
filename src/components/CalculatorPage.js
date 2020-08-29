@@ -7,7 +7,7 @@ export default class CalculatorPage extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            display: 0
+            display: ""
         }
     }
 

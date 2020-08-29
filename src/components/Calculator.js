@@ -11,35 +11,37 @@ export default class Calculator extends React.Component{
             <div>
             <br />
             <Screen display={this.props.display}/>
-            <div class="row1">
-            <button>*</button>
-            <button>/</button>
-            <button>^</button>
-            <button>Clear</button>
+            <div className="row1">
+            <button name="(">(</button>
+            <button name=")">)</button>
+            <button name="">*</button>
+            <button name="">/</button>
+            <button name="">^</button>
+            <button name="">Clear</button>
             </div>
             <br/>
-            <div class="row2">
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>Back Space</button>
+            <div className="row2">
+            <button name="">7</button>
+            <button name="">8</button>
+            <button name="">9</button>
+            <button name="">Back Space</button>
             </div>
             <br/>
-            <div class="row3">
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>+</button>
+            <div className="row3">
+            <button name="">4</button>
+            <button name="">5</button>
+            <button name="">6</button>
+            <button name="">+</button>
             </div>
             <br/>
-            <div class="row4">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>-</button>
+            <div className="row4">
+            <button name="">1</button>
+            <button name="">2</button>
+            <button name="">3</button>
+            <button name="">-</button>
             </div>
             <br/>
-            <div class="row5">
+            <div className="row5">
             <button>0</button>
             <button>.</button>
             <button>00</button>
