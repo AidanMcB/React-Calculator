@@ -11,6 +11,9 @@ code {
     monospace;
 }
 @media all and (max-width: 500px){
+*{
+  box-sizing: border-box;
+}
   /* Display */
   .display-container{
     display: flex;
@@ -20,18 +23,65 @@ code {
   .display{
     text-align: right;
     display: block;
+    background-color: rgb(255,255,255, .5);
     border: 1px solid black;
-    padding: .5em;
-    height: 1.25em;
-    width: 40%;
+    border-radius: .25em;
+    padding: .75em;
+    height: 2.75em;
+    width: 70%;
+    margin: .75em;
+    margin-bottom: 1em;
   }
   /* Calculator */
-  .btn-grid{
+  .full-calc{
+    background-color: rgba(244, 192, 130, 0.4);
+    position: relative;
+    top: 3em;
+    border: 1px solid blue;
+    border-radius: 1em; 
     margin: auto;
-    display: grid;
-    width: 50%;
- 
+    width: 80%;
+    height: 20em;
   }
+  button:nth-child(-n+2){
+    width: 4em;
+  }
+  .btn-table, tr, td{
+    margin: auto;
+  }
+  td{
+    margin: 0 auto;
+    padding: 0;
+  }
+  button{
+    font-weight: 550;
+    font-size: 1em;
+    background-color: rgba(187, 156, 103, 0.75);
+    border-radius: .5em;
+    display: block;
+    padding: .5em;
+    width: 100%;
+  }
+  .mult, .plus, .minus ,.divide{
+    background-color: rgb(228, 230, 119);
+  }
+  .clear{
+    background-color: indianred;
+  }
+
+  /* 
+  purples:
+  b300d4 
+  f5e1fd 
+  ce9dd9  *
+  
+  rand:
+  fdcfb3 
+  cec8e4
+  f9f7e8
+  */
+
+  
   
 
 
