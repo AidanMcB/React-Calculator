@@ -28,9 +28,9 @@ body {
       border-radius: .25em;
       padding: .75em;
       height: 2.75em;
-      width: 70%;
+      width: 60%;
       margin: .75em;
-      margin-bottom: 1em;
+      margin-bottom: 2em;
     }
     /* Calculator */
     .full-calc{
@@ -40,8 +40,9 @@ body {
       border: 1px solid blue;
       border-radius: 1em; 
       margin: auto;
-      width: 80%;
-      height: 20em;
+      width: 35%;
+      padding: 2em;
+      height: 25em;
     }
     button:nth-child(-n+2){
       width: 4em;
@@ -51,7 +52,7 @@ body {
     }
     td{
       margin: 0 auto;
-      padding: 0;
+      padding: .25em;
     }
     button{
       font-weight: 550;
