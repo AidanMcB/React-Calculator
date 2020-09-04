@@ -14,92 +14,115 @@ code {
 *{
   box-sizing: border-box;
 }
+/* Display */
+.display-container{
+  display: flex;
+  justify-content: center;
+  display: flex;
+}
+.display{
+  text-align: right;
+  display: block;
+  background-color: rgb(255,255,255, .5);
+  border: 1px solid black;
+  border-radius: .25em;
+  padding: .75em;
+  height: 6vh;
+  width: 75%;
+  margin: auto;
+  font-size: 1.25em;
+  margin-bottom: 1em;
+}
+/* Calculator */
+.full-calc{
+  background-color: rgba(244, 192, 130, 0.4);
+  position: relative;
+  top: 3em;
+  border: 1px solid blue;
+  border-radius: 1em; 
+  margin: auto;
+  width: 50%;
+  padding: 0.5em;
+  height: 100%;
+}
+button:nth-child(-n+2){
+  width: 4em;
+}
+.btn-table, tr, td{
+  margin: auto;
+}
+.btn-table{
+  table-layout: fixed;
+  padding: .5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+td{
+  margin: 0 auto;
+  padding: 0;
+  align-content: center;
+}
+button{
+  width: 40%;
+  font-weight: 550;
+  font-size: 1.85vw;
+  border-radius: .5em;
+  display: block;
+  padding: .45em;
+}
+.mult, .plus, .minus ,.divide{
+  background-color: rgb(228, 230, 119);
+}
+.clear{
+  background-color: indianred;
+}
 
-  /* Display */
-  .display-container{
-    display: flex;
-    justify-content: center;
-    display: flex;
-  }
-  .display{
-    text-align: right;
-    display: block;
-    background-color: rgb(255,255,255, .5);
-    border: 1px solid black;
-    border-radius: .25em;
-    padding: .75em;
-    height: 2.75em;
-    width: 60%;
-    margin: .75em;
-    margin-bottom: 2em;
-  }
-  /* Calculator */
-  .full-calc{
-    background-color: rgba(244, 192, 130, 0.4);
-    top: 3em;
-    border: 1px solid blue;
-    border-radius: 1em; 
-    margin: auto;
-    width: 35%;
-    padding: 2em;
-    height: 25em;
-  }
-  button:nth-child(-n+2){
-    width: 4em;
-  }
-  .btn-table, tr, td{
-    margin: auto;
-  }
-  td{
-    margin: 0 auto;
-    padding: .25em;
-  }
-  button{
-    font-weight: 550;
-    font-size: 1em;
-    background-color: rgba(187, 156, 103, 0.75);
-    border-radius: .5em;
-    display: block;
-    padding: .5em;
-    width: 100%;
-  }
-  .mult, .plus, .minus ,.divide{
-    background-color: rgb(228, 230, 119);
-  }
-  .clear{
-    background-color: blue;
-  }
+@media screen and (min-width: 401px) and (max-width: 615px){
+/* Display */
+.display{
+  font-size: .75em;
+}
+/* Calculator */
+.full-calc{
+  height: 20em;
+}
+button:nth-child(-n+2){
+  width: 4em;
+}
+.btn-table, tr, td{
+  margin: auto;
+}
+.btn-table{
+  table-layout: fixed;
+  padding: .5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+td{
+  margin: 0 auto;
+  padding: 0;
+  align-content: center;
+}
+button{
+  width: 40%;
+  font-weight: 550;
+  font-size: 2.75vw;
+  border-radius: .5em;
+  display: block;
+  padding: .45em;
+}
+.mult, .plus, .minus ,.divide{
+  background-color: rgb(228, 230, 119);
+}
+.clear{
+  background-color: indianred;
+}
+}
 
-
-  /* 
-  purples:
-  b300d4 
-  f5e1fd 
-  ce9dd9  
-  
-  rand:
-  fdcfb3 
-  cec8e4
-  f9f7e8
-  */
-
-  /*Mobile */
-@media screen and (max-width: 500px) and (min-width: 340px){
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
-  *{
-    box-sizing: border-box;
-  }
+  /* Mobile */
+@media screen and (max-width: 400px) and (min-width: 340px){
     /* Display */
     .display-container{
       display: flex;
@@ -114,8 +137,8 @@ code {
       border-radius: .25em;
       padding: .75em;
       height: 2.75em;
-      width: 100%;
-      margin: .75em;
+      width: 90%;
+      margin: auto;
       margin-bottom: 1em;
     }
     /* Calculator */
@@ -141,16 +164,19 @@ code {
       table-layout: fixed;
       width: 100%;
       padding: .5em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     td{
       margin: 0 auto;
       padding: 0;
+      align-content: center;
     }
     button{
       width: 100%;
       font-weight: 550;
       font-size: 1em;
-      background-color: rgba(187, 156, 103, 0.75);
       border-radius: .5em;
       display: block;
       padding: .35em;
@@ -175,6 +201,27 @@ code {
     */
   }
   @media screen and (max-width: 340px){
+    button{
+      width: 50%;
+      font-weight: 550;
+      font-size: 4vw;
+      border-radius: .5em;
+      display: block;
+      padding: .35em;
+    }
+    .display{
+      text-align: right;
+      display: block;
+      background-color: rgb(255,255,255, .5);
+      border: 1px solid black;
+      border-radius: .25em;
+      padding: .25em;
+      height: 2em;
+      width: 90%;
+      font-size: 12px;
+      margin: auto;
+      margin-bottom: 1em;
+    }
     .full-calc{
       /* overflow-x: auto; */
       background-color: rgba(244, 192, 130, 0.4);
@@ -184,48 +231,8 @@ code {
       border-radius: 1em; 
       margin: auto;
       width: 80%;
-      padding: 0em;
-      height: 20em;
+      padding: 0.5em;
+      height: 100%;
     }
-    button:nth-child(-n+2){
-      width: 4em;
-    }
-    .btn-table, tr, td{
-      margin: auto;
-    }
-    .btn-table{
-      table-layout: fixed;
-      width: 90%;
-      padding: .5em;
-    }
-    td{
-      margin: 0 auto;
-      padding: 0;
-    }
-    button{
-      width: 100%;
-      font-weight: 550;
-      font-size: .75em;
-      background-color: rgba(187, 156, 103, 0.75);
-      border-radius: .5em;
-      display: block;
-      padding: .35em;
-    }
-    .mult, .plus, .minus ,.divide{
-      background-color: rgb(228, 230, 119);
-    }
-    .clear{
-      background-color: indianred;
-    }
-  
   }
   
-
-
-  
-  
-
-
-
-
-
