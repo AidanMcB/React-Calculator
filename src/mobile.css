@@ -14,6 +14,10 @@ code {
 *{
   box-sizing: border-box;
 }
+.calc-page{
+  background: linear-gradient(rgb(145, 122, 200),rgb(198, 191, 191), rgb(106, 148, 237));
+  height: 100vh;
+}
 /* Display */
 .display-container{
   display: flex;
