@@ -9,7 +9,6 @@ export default class Screen extends React.Component {
                     {this.props.display}
                 </div>
             </div>
-
         )
     }
 }

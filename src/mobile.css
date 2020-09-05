@@ -14,6 +14,10 @@ code {
 *{
   box-sizing: border-box;
 }
+.calc-page{
+  background: linear-gradient(rgb(145, 122, 200),rgb(198, 191, 191), rgb(106, 148, 237));
+  height: 100vh;
+}
 /* Display */
 .display-container{
   display: flex;
@@ -24,10 +28,10 @@ code {
   text-align: right;
   display: block;
   background-color: rgb(255,255,255, .5);
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: .25em;
   padding: .75em;
-  height: 6vh;
+  height: 7vh;
   width: 75%;
   margin: auto;
   font-size: 1.25em;
@@ -35,15 +39,17 @@ code {
 }
 /* Calculator */
 .full-calc{
-  background-color: rgba(244, 192, 130, 0.4);
+  background-color: rgba(94, 191, 226, 0.4);
   position: relative;
   top: 3em;
-  border: 1px solid blue;
+  border: 2px solid black;
+  box-shadow: 5px 5px black;
   border-radius: 1em; 
   margin: auto;
   width: 50%;
   padding: 0.5em;
-  height: 100%;
+  padding-bottom: 2em;
+  height: 100;
 }
 button:nth-child(-n+2){
   width: 4em;
@@ -51,47 +57,46 @@ button:nth-child(-n+2){
 .btn-table, tr, td{
   margin: auto;
 }
-.btn-table{
-  table-layout: fixed;
-  padding: .5em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 td{
   margin: 0 auto;
-  padding: 0;
+  padding: .5em;
   align-content: center;
 }
 button{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   width: 40%;
   font-weight: 550;
   font-size: 1.85vw;
   border-radius: .5em;
+  outline: none;
   display: block;
   padding: .45em;
 }
-.mult, .plus, .minus ,.divide{
-  background-color: rgb(228, 230, 119);
+
+.button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.mult, .plus, .minus ,.divide, .open-par, .close-par, .back{
+  background-color: rgb(147, 230, 119);
 }
 .clear{
-  background-color: indianred;
+  background-color: rgb(242, 110, 110);
+}
+.equal{
+  background-color: dodgerblue;
 }
 
 @media screen and (min-width: 401px) and (max-width: 615px){
 /* Display */
 .display{
   font-size: .75em;
+  height: 6vh;
 }
 /* Calculator */
 .full-calc{
   height: 20em;
-}
-button:nth-child(-n+2){
-  width: 4em;
-}
-.btn-table, tr, td{
-  margin: auto;
 }
 .btn-table{
   table-layout: fixed;
@@ -100,24 +105,11 @@ button:nth-child(-n+2){
   justify-content: center;
   align-items: center;
 }
-td{
-  margin: 0 auto;
-  padding: 0;
-  align-content: center;
-}
 button{
-  width: 40%;
-  font-weight: 550;
   font-size: 2.75vw;
-  border-radius: .5em;
-  display: block;
-  padding: .45em;
 }
-.mult, .plus, .minus ,.divide{
-  background-color: rgb(228, 230, 119);
-}
-.clear{
-  background-color: indianred;
+td{
+  padding: 0;
 }
 }
 
@@ -130,35 +122,13 @@ button{
       display: flex;
     }
     .display{
-      text-align: right;
-      display: block;
-      background-color: rgb(255,255,255, .5);
-      border: 1px solid black;
-      border-radius: .25em;
-      padding: .75em;
       height: 2.75em;
       width: 90%;
-      margin: auto;
-      margin-bottom: 1em;
     }
     /* Calculator */
     .full-calc{
-      /* overflow-x: auto; */
-      background-color: rgba(244, 192, 130, 0.4);
-      position: relative;
-      top: 3em;
-      border: 1px solid blue;
-      border-radius: 1em; 
-      margin: auto;
       width: 80%;
-      padding: 0.5em;
       height: 20em;
-    }
-    button:nth-child(-n+2){
-      width: 4em;
-    }
-    .btn-table, tr, td{
-      margin: auto;
     }
     .btn-table{
       table-layout: fixed;
@@ -168,71 +138,33 @@ button{
       justify-content: center;
       align-items: center;
     }
-    td{
-      margin: 0 auto;
-      padding: 0;
-      align-content: center;
-    }
     button{
       width: 100%;
-      font-weight: 550;
       font-size: 1em;
-      border-radius: .5em;
-      display: block;
       padding: .35em;
     }
-    .mult, .plus, .minus ,.divide{
-      background-color: rgb(228, 230, 119);
+    td{
+      padding: 0;
     }
-    .clear{
-      background-color: indianred;
-    }
-  
-    /* 
-    purples:
-    b300d4 
-    f5e1fd 
-    ce9dd9  *
-    
-    rand:
-    fdcfb3 
-    cec8e4
-    f9f7e8
-    */
   }
   @media screen and (max-width: 340px){
     button{
       width: 50%;
-      font-weight: 550;
       font-size: 4vw;
-      border-radius: .5em;
-      display: block;
       padding: .35em;
     }
     .display{
-      text-align: right;
-      display: block;
-      background-color: rgb(255,255,255, .5);
-      border: 1px solid black;
-      border-radius: .25em;
       padding: .25em;
       height: 2em;
       width: 90%;
       font-size: 12px;
-      margin: auto;
-      margin-bottom: 1em;
     }
     .full-calc{
-      /* overflow-x: auto; */
-      background-color: rgba(244, 192, 130, 0.4);
-      position: relative;
-      top: 3em;
-      border: 1px solid blue;
-      border-radius: 1em; 
-      margin: auto;
       width: 80%;
-      padding: 0.5em;
       height: 100%;
+    }
+    td{
+      padding: 0;
     }
   }
   

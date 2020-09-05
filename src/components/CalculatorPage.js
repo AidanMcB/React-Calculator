@@ -70,9 +70,10 @@ export default class CalculatorPage extends React.Component {
 
     render() {
         return (
-            <div>
-                Calculator
+            <div className="calc-page">
+                <div>
                 <Calculator handleClick={this.handleClick} display={this.state.display} />
+                </div>
             </div>
         )
     }
