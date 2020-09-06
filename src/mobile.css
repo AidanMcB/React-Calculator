@@ -42,7 +42,7 @@ code {
   background-color: rgba(94, 191, 226, 0.4);
   position: relative;
   top: 3em;
-  border: 2.1px solid black;
+  border: 2px solid black;
   box-shadow: 5px 5px black;
   border-radius: 1em; 
   margin: auto;
